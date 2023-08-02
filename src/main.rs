@@ -30,7 +30,7 @@ async fn main() -> Result<(), anyhow::Error> {
     env::set_var("RUST_LOG", "info,crawler=debug");
     env_logger::init();
 
-    if let Some(_) = cli.subcommand_matches("spiders") {
+    if  cli.subcommand_matches("spiders").is_some() {
         let spider_names = vec!["cvedetails", "github", "quotes"];
         for name in spider_names {
             println!("{}", name);

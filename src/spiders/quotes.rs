@@ -55,16 +55,16 @@ impl super::Spider for QuotesSpider {
 
         let document = Document::from(html.as_str());
 
-        let quotes = document.select(Class("quote"));
+        let quotes = document.find(Class("quote"));
         for quote in quotes {
-            let mut spans = quote.select(Name("span"));
+            let mut spans = quote.find(Name("span"));
             let quote_span = spans.next().unwrap();
             let quote_str = quote_span.text().trim().to_string();
 
             let author = spans
                 .next()
                 .unwrap()
-                .select(Class("author"))
+                .find(Class("author"))
                 .next()
                 .unwrap()
                 .text()
@@ -78,7 +78,7 @@ impl super::Spider for QuotesSpider {
         }
 
         let next_pages_link = document
-            .select(
+            .find(
                 Class("pager")
                     .descendant(Class("next"))
                     .descendant(Name("a")),
@@ -101,10 +101,10 @@ impl QuotesSpider {
     fn normalize_url(&self, url: &str) -> String {
         let url = url.trim();
 
-        if url.starts_with("/") {
+        if url.starts_with('/') {
             return format!("https://quotes.toscrape.com{}", url);
         }
 
-        return url.to_string();
+        url.to_string()
     }
 }

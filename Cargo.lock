@@ -1126,28 +1126,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "spider_rs"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "async-trait",
- "clap",
- "env_logger",
- "fantoccini",
- "futures",
- "log",
- "regex",
- "reqwest",
- "select",
- "serde",
- "serde_json",
- "thiserror",
- "tokio",
- "tokio-stream",
- "url",
-]
-
-[[package]]
 name = "spin"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1550,6 +1528,28 @@ checksum = "9b85cbef8c220a6abc02aefd892dfc0fc23afb1c6a426316ec33253a3877249b"
 dependencies = [
  "js-sys",
  "wasm-bindgen",
+]
+
+[[package]]
+name = "web_crawler_x"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "clap",
+ "env_logger",
+ "fantoccini",
+ "futures",
+ "log",
+ "regex",
+ "reqwest",
+ "select",
+ "serde",
+ "serde_json",
+ "thiserror",
+ "tokio",
+ "tokio-stream",
+ "url",
 ]
 
 [[package]]

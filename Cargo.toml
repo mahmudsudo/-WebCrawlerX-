@@ -1,5 +1,5 @@
 [package]
-name = "spider_rs"
+name = "web_crawler_x"
 version = "0.1.0"
 edition = "2021"
 
@@ -14,7 +14,7 @@ thiserror = "1.0"
 async-trait = "0.1"
 log = "0.4"
 env_logger = "0.9"
-select = "0.6.0-alpha.1"
+select = "0.6.0"
 url = "2.2"
 futures = "0.3"
 tokio-stream = "0.1"

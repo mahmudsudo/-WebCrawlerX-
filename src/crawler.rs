@@ -69,7 +69,7 @@ impl Crawler {
         );
 
         loop {
-            if let Some((visited_url, new_urls)) = new_urls_rx.try_recv().ok() {
+            if let Ok((visited_url, new_urls)) = new_urls_rx.try_recv() {
                 visited_urls.insert(visited_url);
 
                 for url in new_urls {
@@ -118,7 +118,7 @@ impl Crawler {
             barrier.wait().await;
         });
     }
-
+    #[warn(clippy::too_many_arguments)]
     fn launch_scrapers<T: Send + 'static>(
         &self,
         concurrency: usize,
