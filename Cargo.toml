@@ -1,8 +1,13 @@
 [package]
-name = "web_crawler_x"
+name = "webcrawlerx"
 version = "0.1.0"
 edition = "2021"
-
+authors = ["Mahmud Bello <blinkztyler@gmail.com>"]
+description = "A flexible and efficient web crawler written in Rust"
+license = "MIT"
+repository = "https://github.com/mahmudsudo/-WebCrawlerX-"
+keywords = ["web", "crawler", "spider", "scraping"]
+categories = ["web-programming"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

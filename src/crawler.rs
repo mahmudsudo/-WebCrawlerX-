@@ -13,6 +13,7 @@ use tokio::{
     time::sleep,
 };
 
+/// Represents a web crawler with configurable parameters.
 pub struct Crawler {
     delay: Duration,
     crawling_concurrency: usize,
@@ -20,6 +21,13 @@ pub struct Crawler {
 }
 
 impl Crawler {
+    /// Creates a new Crawler instance.
+    ///
+    /// # Arguments
+    ///
+    /// * `delay` - The delay between requests.
+    /// * `concurrent_requests` - The number of concurrent requests allowed.
+    /// * `page_limit` - The maximum number of pages to crawl.
     pub fn new(
         delay: Duration,
         crawling_concurrency: usize,
@@ -32,6 +40,11 @@ impl Crawler {
         }
     }
 
+    /// Runs the crawler with the given spider.
+    ///
+    /// # Arguments
+    ///
+    /// * `spider` - An Arc-wrapped instance of a struct implementing the Spider trait.
     pub async fn run<T: Send + 'static>(&self, spider: Arc<dyn Spider<Item = T>>) {
         let mut visited_urls = HashSet::<String>::new();
         let crawling_concurrency = self.crawling_concurrency;
